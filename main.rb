@@ -1,17 +1,19 @@
-require "./Task.rb"
-require "./Todo.rb"
+class Task
 
+  @@count = 0
 
-task1 = Task.new(title: "洗濯", content: "7時半までに干し終える")
-task2 = Task.new(title: "仕事", content: "9時〜18時")
-task3 = Task.new(title: "買物", content: "卵, ヨーグルト")
+  attr_accessor :id
+  def initialize
+    @@count += 1
+    @id = @@count
+    return @id
+  end
+end
 
-todo = ToDo.new
-todo.add(task1)
-todo.add(task2)
-todo.info
-todo.delete(id: 1)
-todo.add(task3)
-todo.delete(id: 4)
-todo.delete(id: 3)
-todo.info
+task1 = Task.new
+task2 = Task.new
+task3 = Task.new
+
+puts task1.id
+puts task2.id
+puts task3.id
