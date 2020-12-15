@@ -1,18 +1,17 @@
 class Task
-  
+
+  attr_accessor :id, :title, :content
   @@count = 0
 
-  attr_accessor :task, :id
-  def initialize(task)
-    @task = task
-    @id = @@count += 1
+  def initialize(title:, content:)
+    @@count += 1
+    @id = @@count
+    @title = title
+    @content = content
   end
+
+  def info
+    puts "[No.#{@id}] #{@title}:#{@content}"
+  end
+
 end
-
-task1 = Task.new
-task2 = Task.new
-task3 = Task.new
-
-puts task1.id
-puts task2.id
-puts task3.id
