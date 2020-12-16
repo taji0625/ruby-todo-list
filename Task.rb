@@ -1,6 +1,5 @@
 class Task
 
-  attr_accessor :id, :title, :content
   @@count = 0
 
   def initialize(title:, content:)
